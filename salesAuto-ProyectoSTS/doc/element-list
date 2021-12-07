@@ -1,0 +1,6 @@
+com.salesianostriana.primerodam
+com.salesianostriana.primerodam.controller
+com.salesianostriana.primerodam.modelo
+com.salesianostriana.primerodam.repository
+com.salesianostriana.primerodam.service
+com.salesianostriana.primerodam.service.database

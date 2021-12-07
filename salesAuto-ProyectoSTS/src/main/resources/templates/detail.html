@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Portada SalesAuto</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+        integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+    <!-- CSS -->
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
+    
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+        integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+        crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+        integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <div id="sidebar">
+            <div class="sidebar-header ">
+                <a href="#" title="Inicio">
+                    <img class="d-block w-100" src="../static/img/logo1.png" th:src="@{/img/logo1.png}"
+                        alt="Imagen del logo">
+                </a>
+            </div>
+
+            <ul class="list-unstyled components">
+                <p class="text-center"><strong>Funcionalidades </strong></p>
+                <li><a href="form.html" title="Crear nuevo registro"
+					th:href="@{/nuevo}"
+					onclick="return confirm('¿Desea salir sin efectuar ningún cambio?');">Agregar
+						&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<i
+						class="fa fa-plus"></i>
+				</a></li>
+				<li>
+                    <a href="#CategoriaSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Filtrar</a>
+                    <ul class="collapse list-unstyled" id="CategoriaSubmenu">
+                    	<li>
+                            <a href="#CarroceriaSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Carroceria</a>
+		                    <ul class="collapse list-unstyled" id="CarroceriaSubmenu">
+		                        <li>
+		                            <a href="filtrado.html"  title="coche 4x4" 
+											   th:href="@{/carroceria?(carCategoria='4x4')}">4x4</a>
+		                        </li>
+		                        <li>
+		                            <a href="filtrado.html"  title="coche coupe" 
+											   th:href="@{/carroceria?(carCategoria='Coupe')}">Coupe</a>
+		                        </li>
+		                        <li>
+		                            <a href="filtrado.html"  title="coche deportivo" 
+											   th:href="@{/carroceria?(carCategoria='Deportivo')}">Deportivo</a>
+		                        </li>
+		                        <li>
+		                            <a href="filtrado.html"  title="coche monovolumen" 
+											   th:href="@{/carroceria?(carCategoria='Monovolumen')}">Monovolumen</a>
+		                        </li>
+		                   </ul>
+		                </li>
+                        <li>
+                            <a href="#CombustibleSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Combustible</a>
+		                    <ul class="collapse list-unstyled" id="CombustibleSubmenu">
+		                        <li>
+		                            <a href="filtrado.html"  title="coche eléctrico" 
+											   th:href="@{/categoria?(comCategoria='Eléctrico')}">Eléctrico</a>
+		                        </li>
+		                        <li>
+		                            <a href="filtrado.html"  title="coche gasolina" 
+											   th:href="@{/categoria?(comCategoria='Gasolina')}">Gasolina</a>
+		                        </li>
+		                        <li>
+		                            <a href="filtrado.html"  title="coche diesel" 
+											   th:href="@{/categoria?(comCategoria='Diesel')}">Diesel</a>
+		                        </li>
+		                        <li>
+		                            <a href="filtrado.html"  title="coche híbrido" 
+											   th:href="@{/categoria?(comCategoria='Híbrido')}">Híbrido</a>
+		                        </li>
+		                    </ul>
+		                </li>                   
+                    </ul>
+                </li>
+                
+            </ul>
+            <aside class="mt-4 pt-5">
+                <article>
+                    <div class="bg-light pt-2 pb-1 ">
+                        <img src="../static/img/anuncio3.jpg" th:src="@{/img/anuncio3.jpg}"
+                            class="rounded mx-auto d-block" alt="Anuncio de talleres paco" width="200px">
+                        <p class="text-center text-danger">Lo mejor o nada </p>
+                    </div>
+                </article>
+            </aside>
+        </div>
+
+        <!-- Page Content  -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+                <div class="container-fluid d-flex align-items-center">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-danger">
+                        <i class="fas fa-align-left"></i>
+                        <span>Deslizar menu</span>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
+
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#" title="Inicio">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Contacto</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Quienes somos</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <main>
+                <section>
+                    <div class="container mt-4">
+                        <div class="row">
+                            <div class="col-md-12 mb-12 mb-5 mt-5">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <div class="row justify-content-start text-left">
+                                            <div class="col-6 col-sm-6 flex-column d-flex text-left">
+                                                <h4 class="card-title" th:text="${coche.marca} +' '+ ${coche.modelo}">
+                                                </h4>
+                                            </div>
+                                            <div class="col-6 col-sm-6 flex-column d-flex text-right">
+
+                                                <a> <i class="bi bi-x-octagon "></i></a>
+                                            </div>
+                                        </div>
+
+                                        <div class="row pt-0 " id="detail">
+                                            <div class="col-4 md-12">
+                                                <img class="img-thumbnail" src="https://via.placeholder.com/300x200"
+                                                    th:src="${#strings.isEmpty(coche.foto)} ? 'http://placehold.it/350x260' : ${coche.foto}"
+                                                    alt="Imagen del coche" />
+                                            </div>
+                                            <div class="col-4 md-6">
+                                                <p class="card-text ">Marca: <strong th:text="${coche.marca}"> </strong>
+                                                </p>
+                                                <p class="card-text ">Combustible: <strong
+                                                        th:text="${coche.categoria.combustible}"> </strong></p>
+                                                <p class="card-text ">Carroceria: <strong
+                                                        th:text="${coche.categoria.carroceria}"> </strong></p>
+                                                <p class="card-text ">Consumo: <strong
+                                                        th:text="${coche.consumo} +' l/100km'"> </strong></p>
+                                            </div>
+                                            <div class="col-4 md-6 ">
+                                                <p class="card-text ">Modelo: <strong th:text="${coche.modelo}">
+                                                    </strong></p>
+                                                <p class="card-text ">Cambio:<strong th:text="${coche.cambio}">
+                                                    </strong></p>
+                                                <p class="card-text ">Potencia: <strong
+                                                        th:text="${#numbers.formatDecimal(coche.cV, 1, 0)} +' cv'">
+                                                    </strong></p>
+                                                <p class="card-text ">CO2: <strong
+                                                        th:text="${#numbers.formatDecimal(coche.cO2, 1, 0)}"> </strong>
+                                                </p>
+                                            </div>
+                                            <div class="col-12 md-12 offset-md-4 ">
+                                                <p class="card-text ">Fecha de alta: <strong
+                                                        th:text="${#temporals.format(coche.fechaAlta)}"> </strong></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer">
+                                        <div class="row justify-content-between ">
+                                            <div class="col-6 col-sm-6 flex-column d-flex">
+                                                <p class="h4">Precio: <strong
+                                                        th:text="${#numbers.formatDecimal(coche.precio, 1, 0)} +' €'">
+                                                    </strong></p>
+                                            </div>
+                                            <div class="col-2 col-sm-2 flex-column d-flex">
+                                                <a class="btn btn-success btn-sm" th:text="'Editar'"
+                                                    th:href="@{/edit/} + ${coche.id}" title="Editar coche"><i
+                                                        class="fa fa-edit"></i></a>
+                                            </div>
+                                            <div class="col-2 col-sm-2 flex-column d-flex">
+                                                <a class="btn btn-danger btn-sm" th:href="@{/delete/} + ${coche.id}"
+                                                    th:text="'Borrar'" title="Borrar coche"
+                                                    onclick="return confirm('¿Desea eliminar el registro?');">
+                                                    <i class="fa fa-trash"></i></a>
+                                            </div>
+                                            <div class="col-2 col-sm-2 flex-column d-flex">
+                                                <a class="btn btn-secondary btn-sm" th:href="@{/}" th:text="'Atras'"
+                                                    title="Salie al menu principal"
+                                                    onclick="return confirm('¿Desea salir sin efectuar ningún cambio?');">
+                                                    <i class="bi bi-x-octago"></i></a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </section>
+            </main>
+
+            <footer class="footer text-center btn-secondary ">
+                <div class="container">
+                    <div class="row ">
+                        <div class="col-lg-4 mb-5 mb-lg-0">
+                            <h4 class=" mb-4">Nuestra app</h4>
+                            <ul class="list-inline ">
+                                <li>Disponible Apple Store</li>
+                                <li>Disponible Google Play</li>
+                            </ul>
+                        </div>
+                        <!-- ICONOS-->
+                        <div class="col-lg-4 mb-5 mb-lg-0">
+                            <h4 class=" mb-4">Siguenos</h4>
+                            <a class="btn btn-outline-light btn-social mx-1" href="#!"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="26" fill="currentColor"
+                                    class="bi bi-linkedin" viewBox="0 0 16 16">
+                                    <path
+                                        d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
+                                </svg></a>
+                            <a class="btn btn-outline-light btn-social mx-1" href="#!"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="26" fill="currentColor"
+                                    class="bi bi-facebook" viewBox="0 0 16 16">
+                                    <path
+                                        d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                                </svg></a>
+                            <a class="btn btn-outline-light btn-social mx-1" href="#"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="26" fill="currentColor"
+                                    class="bi bi-twitter" viewBox="0 0 16 16">
+                                    <path
+                                        d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
+                                </svg></a>
+                            <a class="btn btn-outline-light btn-social mx-1" href="#"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="26" fill="currentColor"
+                                    class="bi bi-instagram" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                                </svg></a>
+                        </div>
+
+                        <div class="col-lg-4 ">
+                            <h4 class=" mb-4">Sobre SalesAuto</h4>
+                            <ul class="list-inline ">
+                                <li><a href="#" class="text-white">Politica privacidad</a> </li>
+                                <li><a href="#" class="text-white">Aviso legal</a> </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+    <!--JS PROPIO-->
+    <script src="../static/js/scrips.js" th:src="@{/js/scrips.js}"></script>
+
+</body>
+
+</html>
